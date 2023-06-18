@@ -1,0 +1,27 @@
+devel@pi4-ultibo:~ $ rm -f 4ch.csv
+
+devel@pi4-ultibo:~ $ minicom
+
+
+devel@pi4-ultibo:~/raspberrypi-gpio/dist $ make
+
+devel@pi4-ultibo:~/raspberrypi-gpio/dist $ sudo ./pigpio
+
+k = 1;		on 2 usec
+k = 100;	57 - 28 = 29 usec
+
+k = 7000;
+158 usec
+
+k = 66000;
+143628 - 143577 = 51 usec
+
+devel@pi4-ultibo:~/raspberrypi-gpio/dist $ make
+make: Circular dist_pigpio <- dist_pigpio dependency dropped.
+gcc -Wall dist_pigpio.c -lpigpio -o pigpio
+devel@pi4-ultibo:~/raspberrypi-gpio/dist $ sudo ./pigpio  
+Press CTRL-C to exit.
+
+devel@pi4-ultibo:~/generate-vcd/sample $ rm -f ~/4ch.csv
+devel@pi4-ultibo:~/generate-vcd/sample $ cat 4ch_header.vcd xx > test2.vcd 
+devel@pi4-ultibo:~/generate-vcd/sample $ gtkwave test2.vcd 
